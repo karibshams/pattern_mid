@@ -1,0 +1,58 @@
+Loading data...
+Training data shape: (71275, 17)
+Test data shape: (7920, 17)
+
+Training data info:
+id                int64
+price             int64
+year            float64
+manufacturer     object
+model            object
+condition        object
+cylinders        object
+fuel             object
+odometer        float64
+title_status     object
+transmission     object
+drive            object
+size             object
+type             object
+paint_color      object
+state            object
+posting_date     object
+dtype: object
+
+First few rows of posting_date:
+0    2021-04-30T12:43:00-0700
+1    2021-04-30T10:31:34-0400
+2    2021-04-10T15:11:21-0500
+3    2021-04-23T13:13:09-0500
+4    2021-04-12T20:01:35-0600
+Name: posting_date, dtype: object
+
+Engineering features...
+Warning: posting_date conversion failed, using defaults
+Warning: posting_date conversion failed, using defaults
+After outlier removal: (62822, 47)
+Number of features: 29
+
+Testing models...
+Linear Regression: MSE = 80,902,079
+Ridge (alpha=100): MSE = 81,186,274
+Ridge (alpha=500): MSE = 82,388,887
+Ridge (alpha=1000): MSE = 83,477,138
+Lasso (alpha=100): MSE = 83,635,409
+Random Forest: MSE = 72,951,192
+Gradient Boosting: MSE = 72,684,102
+
+Best model: Gradient Boosting
+Best MSE: 72,684,102
+
+Baseline comparison:
+Baseline 1 (180,000,000): ✓ BEATEN
+Baseline 2 (160,000,000): ✓ BEATEN
+Baseline 3 (120,000,000): ✓ BEATEN
+
+Total baselines beaten: 3/3
+
+Final MSE: 72684102
